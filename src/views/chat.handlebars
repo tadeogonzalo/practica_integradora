@@ -1,0 +1,24 @@
+   <h1>Bienveni@s al chat!</h1>
+<div>
+    <form action="/api/chat" method="post" id="messageForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+<div>
+    <p id="messages-panel"></p>
+
+    {{#each messages}}
+            <hr>
+            <b>{{username}}:</b> {{message}}</br>
+    {{/each}}
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/indexChat.js"></script>
